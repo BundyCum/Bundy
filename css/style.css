@@ -1,0 +1,102 @@
+html {
+
+    font-size: 16px;
+}
+
+
+h1 {
+    color:red !important;
+    background-color: beige;
+    font-size: 70px;
+    font-family:'Times New Roman', Times, serif;
+}
+
+footer {
+    color: black !important;
+    background-color:beige;
+    font-size: 15px;
+    font-family: 'Times New Roman', Times, serif;
+    text-decoration: solid;
+}
+
+.logo {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+header {
+    background-color: beige !important;
+    display: flex;
+    align-items: center;
+    top: 0;
+    position: sticky;
+    box-shadow: 0px 0px 10px rgb(0, 0, 0);
+    border: outset 3px;
+}
+
+nav ul {
+    height: auto;
+    margin-right: 3%;
+
+}
+
+a {
+    font-family: 'Times New Roman', Times, serif;
+    text-decoration: none;
+    list-style: none;
+    text-align: center;
+    background-color: beige;
+}
+
+#comodines_index {
+    font-size: 25px;
+}
+h2 {
+    font-size: 50px;
+    width: 100%;
+    height: 50%;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+iframe {
+    text-align: left;
+}
+
+h3 {
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+p {
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+    background-color: beige;
+}
+
+#formulario {
+    text-align: left;
+    font-size: 25px;
+}
+
+.certificado {
+    text-align: left;
+    font-size: 15px;
+}
+
+.pagina {
+    color: black;
+}
+
+.movimiento {
+        box-shadow: 0px 0px 10px rgb(0, 0, 0);
+    transition: transform 1s ease-in-out;
+}
+    
+
+.movimiento:hover {
+    box-shadow: 0px 0px 10px rgb(0, 0, 0);
+    transform: scale(1.2);
+}
