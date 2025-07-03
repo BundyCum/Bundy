@@ -34,6 +34,25 @@ header {
     border: outset 3px;
 }
 
+.carrito {
+    margin-left: auto;
+    margin-right: 2%;
+}
+
+.logo_moneda {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.tienda { 
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 100px; 
+  max-width: 600px; 
+  margin-left: 50px;
+
+}
+
 nav ul {
     height: auto;
     margin-right: 3%;
