@@ -39,17 +39,36 @@ header {
     margin-right: 2%;
 }
 
+.contador {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: red;
+    color: white;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+
 .logo_moneda {
     margin-right: 10px;
     margin-left: 10px;
 }
 
 .tienda { 
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); 
-  gap: 100px; 
-  max-width: 600px; 
-  margin-left: 50px;
+    list-style-type: none;
+    display: grid;
+    text-align: center;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 100px; 
+    max-width: 600px; 
+    margin-left: 50px;
 
 }
 
@@ -118,4 +137,42 @@ body {
 .movimiento:hover {
     box-shadow: 0px 0px 10px rgb(0, 0, 0);
     transform: scale(1.2);
+}
+
+button {
+  background-color: #28a745;       
+  color: white;                    
+  padding: 12px 24px;              
+  font-size: 16px;
+  font-weight: bold;
+  border: none;                    
+  border-radius: 8px;              
+  cursor: pointer;                 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #218838;       
+  transform: scale(1.05);          
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+#vaciar {
+  background-color: red;       
+  color: white;                    
+  padding: 12px 24px;              
+  font-size: 16px;
+  font-weight: bold;
+  border: none;                    
+  border-radius: 8px;              
+  cursor: pointer;                 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  transition: all 0.3s ease;
+}
+
+#vaciar:hover {
+  background-color: red;       
+  transform: scale(1.05);          
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }

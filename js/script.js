@@ -1,10 +1,11 @@
-// Lista de productos
+
+// Lista de productos 
 let productos = [
-  { nombre: 'Paquete Standard ', precio: 25.99, descuento: true },
-  { nombre: 'Paquete Mega Standard ', precio: 40.00, descuento: false },
-  { nombre: 'Paquete Arcana ', precio: 60.50, descuento: true },
-  { nombre: 'Paquete Mega Arcana ', precio: 15.00, descuento: false },
-  { nombre: 'Paquete Celestial ', precio: 15.00, descuento: true },
+  { nombre: 'Paquete Standard ', precio: 10, descuento: true },
+  { nombre: 'Paquete Mega Standard ', precio: 20, descuento: false },
+  { nombre: 'Paquete Arcana ', precio: 10, descuento: true },
+  { nombre: 'Paquete Mega Arcana ', precio: 20, descuento: false },
+  { nombre: 'Paquete Celestial ', precio: 10, descuento: true },
   { nombre: 'Paquete Mega Celestial ', precio: 20.00, descuento: false },
   { nombre: 'Paquete Buffoon ', precio: 50.00, descuento: false },
   { nombre: 'Paquete Special ', precio: 70.00, descuento: true },
