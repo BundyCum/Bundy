@@ -93,6 +93,7 @@ function cerrarCarrito() {
                  carrito.push(producto);
                  localStorage.setItem("Paquete Standard", JSON.stringify(carrito));
                  actualizarContadorCarrito();
+                 document.getElementById("total-carrito").textContent = "$" + calcularTotalCarrito().toFixed(2);
             });
             const botonAgregar1 = document.getElementById('agregar1');
             botonAgregar1.addEventListener("click", function() {
@@ -101,6 +102,7 @@ function cerrarCarrito() {
                  carrito.push(producto);
                  localStorage.setItem("Paquete Mega Standard", JSON.stringify(carrito));
                  actualizarContadorCarrito();
+                 document.getElementById("total-carrito").textContent = "$" + calcularTotalCarrito().toFixed(2);
             });
             const botonAgregar2 = document.getElementById('agregar2');
             botonAgregar2.addEventListener("click", function() {
@@ -109,6 +111,7 @@ function cerrarCarrito() {
                  carrito.push(producto);
                  localStorage.setItem("Paquete Arcana", JSON.stringify(carrito));
                  actualizarContadorCarrito();
+                 document.getElementById("total-carrito").textContent = "$" + calcularTotalCarrito().toFixed(2);
             });
             const botonAgregar3 = document.getElementById('agregar3');
             botonAgregar3.addEventListener("click", function() {
@@ -117,6 +120,7 @@ function cerrarCarrito() {
                  carrito.push(producto);
                  localStorage.setItem("Paquete Mega Arcana", JSON.stringify(carrito));
                  actualizarContadorCarrito();
+                 document.getElementById("total-carrito").textContent = "$" + calcularTotalCarrito().toFixed(2);
             });
             const botonAgregar4 = document.getElementById('agregar4');
             botonAgregar4.addEventListener("click", function() {
@@ -125,6 +129,7 @@ function cerrarCarrito() {
                  carrito.push(producto);
                  localStorage.setItem("Paquete Celestial", JSON.stringify(carrito));
                  actualizarContadorCarrito();
+                 document.getElementById("total-carrito").textContent = "$" + calcularTotalCarrito().toFixed(2);
             });
             const botonAgregar5 = document.getElementById('agregar5');
             botonAgregar5.addEventListener("click", function() {
@@ -133,6 +138,7 @@ function cerrarCarrito() {
                  carrito.push(producto);
                  localStorage.setItem("Paquete Mega Celestial", JSON.stringify(carrito));
                  actualizarContadorCarrito();
+                 document.getElementById("total-carrito").textContent = "$" + calcularTotalCarrito().toFixed(2);
             });
             const botonAgregar6 = document.getElementById('agregar6');
             botonAgregar6.addEventListener("click", function() {
@@ -141,6 +147,7 @@ function cerrarCarrito() {
                  carrito.push(producto);
                  localStorage.setItem("Paquete Buffoon", JSON.stringify(carrito));
                  actualizarContadorCarrito();
+                 document.getElementById("total-carrito").textContent = "$" + calcularTotalCarrito().toFixed(2);
             });
             const botonAgregar7 = document.getElementById('agregar7');
             botonAgregar7.addEventListener("click", function() {
@@ -149,6 +156,7 @@ function cerrarCarrito() {
                  carrito.push(producto);
                  localStorage.setItem("Paquete Special", JSON.stringify(carrito));
                  actualizarContadorCarrito();
+                 document.getElementById("total-carrito").textContent = "$" + calcularTotalCarrito().toFixed(2);
             });
             const botonAgregar8 = document.getElementById('agregar8');
             botonAgregar8.addEventListener("click", function() {
@@ -157,6 +165,7 @@ function cerrarCarrito() {
                  carrito.push(producto);
                  localStorage.setItem("Paquete Mega Special", JSON.stringify(carrito));
                  actualizarContadorCarrito();
+                 document.getElementById("total-carrito").textContent = "$" + calcularTotalCarrito().toFixed(2);
             });
 
             // Borrar contadores y LocalStorage
@@ -165,6 +174,7 @@ function cerrarCarrito() {
             botonVaciar.addEventListener("click", function() {
                 localStorage.clear();
                 actualizarContadorCarrito();
+                document.getElementById("total-carrito").textContent = "$" + calcularTotalCarrito().toFixed(2);
             });
 
             let cantidad = 0;
@@ -177,4 +187,104 @@ function cerrarCarrito() {
             document.addEventListener("DOMContentLoaded", () => {
                 actualizarContadorCarrito();
             });
-            
+
+        function calcularTotalCarrito() {
+    const paquetes = [
+        "Paquete Standard",
+        "Paquete Mega Standard",
+        "Paquete Arcana",
+        "Paquete Mega Arcana",
+        "Paquete Celestial",
+        "Paquete Mega Celestial",
+        "Paquete Buffoon",
+        "Paquete Special",
+        "Paquete Mega Special"
+    ];
+
+    let total = 0;
+
+    paquetes.forEach(nombre => {
+        const carrito = JSON.parse(localStorage.getItem(nombre)) || [];
+        carrito.forEach(producto => {
+            total += producto.precio;
+        });
+    });
+
+    return total;
+}
+
+document.getElementById("total-carrito").textContent = "$" + calcularTotalCarrito().toFixed(2);
+
+// Carrito abierto con precios y unidades
+
+
+function abrirCarrito() {
+    document.getElementById("fondolateral").style.display = "block";
+    mostrarContadoresCarrito(); 
+    document.getElementById("total-carrito").textContent = "$" + calcularTotalCarrito().toFixed(2);
+}
+
+function mostrarContadoresCarrito() {
+    const paquetes = [
+        "Paquete Standard",
+        "Paquete Mega Standard",
+        "Paquete Arcana",
+        "Paquete Mega Arcana",
+        "Paquete Celestial",
+        "Paquete Mega Celestial",
+        "Paquete Buffoon",
+        "Paquete Special",
+        "Paquete Mega Special"
+    ];
+
+    let contenedor = document.getElementById("contenedor-contadores");
+    contenedor.innerHTML = "";
+
+    paquetes.forEach(nombre => {
+        const carrito = JSON.parse(localStorage.getItem(nombre)) || [];
+        const cantidad = carrito.length;
+
+        if (cantidad > 0) {
+            const producto = carrito[0];
+            let precioUnitario = producto.precio;
+           
+            let totalProducto = precioUnitario * cantidad;
+
+            // línea de texto: "2 x Paquete Special : $140.00"
+            const linea = document.createElement("p");
+            linea.textContent = `${cantidad} x ${nombre} : $${totalProducto.toFixed(2)}`;
+
+            contenedor.appendChild(linea);
+        }
+    });
+
+    // Actualizar total general
+    document.getElementById("total-carrito").textContent = "$" + calcularTotalCarrito().toFixed(2);
+    actualizarContadorCarrito();
+}
+
+// Boton para pagar 
+
+document.getElementById("boton-pagar").addEventListener("click", function () {
+    const total = calcularTotalCarrito();
+    
+    if (total === 0) {
+        alert("Tu carrito está vacío.");
+        return;
+    }
+
+    const confirmacion = confirm(`¿Estás seguro de que quieres pagar $${total.toFixed(2)}?`);
+
+    if (confirmacion) {
+        
+        // Vaciar carrito
+        localStorage.clear();
+
+        // Actualizar la interfaz
+        actualizarContadorCarrito();
+        mostrarContadoresCarrito();
+
+        // Mensaje de agradecimiento
+        alert("✅ ¡Gracias por tu compra!");
+    }
+});
