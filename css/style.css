@@ -140,39 +140,93 @@ body {
 }
 
 button {
-  background-color: #28a745;       
-  color: white;                    
-  padding: 12px 24px;              
-  font-size: 16px;
-  font-weight: bold;
-  border: none;                    
-  border-radius: 8px;              
-  cursor: pointer;                 
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
-  transition: all 0.3s ease;
+    background-color: #28a745;       
+    color: white;                    
+    padding: 8px;              
+    font-size: 16px;
+    font-weight: bold;
+    border: none;                    
+    border-radius: 8px;              
+    cursor: pointer;                 
+    box-shadow: 0 4px 6px;
+    transition: all 0.3s ease;
 }
 
 button:hover {
-  background-color: #218838;       
-  transform: scale(1.05);          
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    background-color: #218838;       
+    transform: scale(1.05);          
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 #vaciar {
-  background-color: red;       
-  color: white;                    
-  padding: 12px 24px;              
-  font-size: 16px;
-  font-weight: bold;
-  border: none;                    
-  border-radius: 8px;              
-  cursor: pointer;                 
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
-  transition: all 0.3s ease;
+    background-color: red;       
+    color: white;                    
+    padding: 10px;              
+    font-size: 16px;
+    font-weight: bold;
+    border: none;                    
+    border-radius: 8px;              
+    cursor: pointer;                 
+    box-shadow: 0 4px 6px;
+    transition: 0.3s;
 }
 
 #vaciar:hover {
-  background-color: red;       
-  transform: scale(1.05);          
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    background-color: red;       
+    transform: scale(1.05);          
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.fondo-lateral {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.lateral {
+    background-color: white;
+    margin: 15%;
+    padding: 20px;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    position: relative;
+}
+
+.cerrar {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.grid-comentarios {
+    display: grid;    
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 50px;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: left;
+    max-width: 800px;
+    margin-left: 0%;
+}
+
+.grid-comentarios h3 {
+    display: flex;
+    grid-column: 1 / 3 ;
+    grid-row: 1 / 2 ;
+}
+
+
+.comentarios {
+    border: 10px solid #ccc;
+    padding: 10px;
+    background: #fff;
+    font-family: Georgia, serif;
 }
