@@ -6,10 +6,10 @@ let productos = [
   { nombre: 'Paquete Arcana ', precio: 10, descuento: true },
   { nombre: 'Paquete Mega Arcana ', precio: 20, descuento: false },
   { nombre: 'Paquete Celestial ', precio: 10, descuento: true },
-  { nombre: 'Paquete Mega Celestial ', precio: 20.00, descuento: false },
-  { nombre: 'Paquete Buffoon ', precio: 50.00, descuento: false },
-  { nombre: 'Paquete Special ', precio: 70.00, descuento: true },
-  { nombre: 'Paquete Mega Special ', precio: 110.00, descuento: true }
+  { nombre: 'Paquete Mega Celestial ', precio: 20, descuento: false },
+  { nombre: 'Paquete Buffoon ', precio: 50, descuento: false },
+  { nombre: 'Paquete Special ', precio: 70, descuento: true },
+  { nombre: 'Paquete Mega Special ', precio: 110, descuento: true }
 ];
 
 // Contadores para saber cuantos tienen descuento
@@ -250,7 +250,7 @@ function mostrarContadoresCarrito() {
            
             let totalProducto = precioUnitario * cantidad;
 
-            // línea de texto: "2 x Paquete Special : $140.00"
+            // línea de texto: "2 x Paquete Special : $140"
 
             const linea = document.createElement("p");
             linea.textContent = `${cantidad} x ${nombre} : $${totalProducto.toFixed(2)}`;
@@ -275,7 +275,7 @@ document.getElementById("boton-pagar").addEventListener("click", function () {
         return;
     }
 
-    const confirmacion = confirm(`¿Estás seguro de que quieres pagar $${total.toFixed(2)}?`);
+    const confirmacion = confirm(`¿Estás seguro de que quieres pagar $${total.toFixed(0)}?`);
 
     if (confirmacion) {
         
@@ -290,6 +290,6 @@ document.getElementById("boton-pagar").addEventListener("click", function () {
 
         // Mensaje de agradecimiento
         
-        alert("✅ ¡Gracias por tu compra!");
+        alert("Tu compra fue de " + `$${total.toFixed(0)}` );
     }
 });
