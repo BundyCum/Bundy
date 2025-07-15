@@ -251,6 +251,7 @@ function mostrarContadoresCarrito() {
             let totalProducto = precioUnitario * cantidad;
 
             // línea de texto: "2 x Paquete Special : $140.00"
+
             const linea = document.createElement("p");
             linea.textContent = `${cantidad} x ${nombre} : $${totalProducto.toFixed(2)}`;
 
@@ -259,6 +260,7 @@ function mostrarContadoresCarrito() {
     });
 
     // Actualizar total general
+
     document.getElementById("total-carrito").textContent = "$" + calcularTotalCarrito().toFixed(2);
     actualizarContadorCarrito();
 }
@@ -278,13 +280,16 @@ document.getElementById("boton-pagar").addEventListener("click", function () {
     if (confirmacion) {
         
         // Vaciar carrito
+
         localStorage.clear();
 
         // Actualizar la interfaz
+
         actualizarContadorCarrito();
         mostrarContadoresCarrito();
 
         // Mensaje de agradecimiento
+        
         alert("✅ ¡Gracias por tu compra!");
     }
 });
